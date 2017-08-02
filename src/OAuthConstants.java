@@ -17,6 +17,9 @@ public class OAuthConstants {
 	public static final String GRANT_TYPE_CLIENT_CREDENTIALS = "client_credentials";
 	public static final String SCOPE = "";
 	public static final String AUTHORIZATION = "Authorization";
+	public static final String EMVS_DATA_ENTRY_MODE = "emvs-data-entry-mode";
+	public static final String EMVS_DATA_ENTRY_MODE_MANUAL = "manual";
+	public static final String EMVS_DATA_ENTRY_MODE_NONMANUAL = "non-manual";
 	public static final String BEARER = "Bearer";
 	public static final String BASIC = "Basic";
 	public static final String JSON_CONTENT = "application/json";

@@ -93,6 +93,7 @@ public class OAuthUtils {
 		String resourceURL = oauthDetails.getResourceServerUrl();
 				
 		HttpGet get = new HttpGet(resourceURL + packUrl());
+                get.addHeader(OAuthConstants.EMVS_DATA_ENTRY_MODE, OAuthConstants.EMVS_DATA_ENTRY_MODE_NONMANUAL);
 		get.addHeader(OAuthConstants.AUTHORIZATION,
 				getAuthorizationHeaderForAccessToken(oauthDetails
 						.getAccessToken()));
@@ -159,7 +160,7 @@ public class OAuthUtils {
 		String uri = "";
         try {
  
-            Object obj = parser.parse(new FileReader("/Users/Administrator/workspace/AuthSdk/0000000004.json"));
+            Object obj = parser.parse(new FileReader("0000000004.json"));
  
             JSONObject jsonObject = (JSONObject) obj;
             
@@ -172,7 +173,7 @@ public class OAuthUtils {
             String _name = (String)name.get("_name");
             System.out.println(_name);
              
-            uri = Verify(productcode, serialnumber,batchid,OAuthUtils.stringFormat(batchexpirydate)).toString();
+            uri = Verify(productcode, serialnumber,batchid,batchexpirydate).toString();
           
         } 
         catch (Exception e) { e.printStackTrace();}
@@ -197,18 +198,6 @@ public class OAuthUtils {
 			
 			return builder;
 	}
-	
-	public static String stringFormat(String input)
-	{
-		String temp = input.replaceAll("[-:]*", "");
-		
-		String year = temp.substring(2,4);
-		String month = temp.substring(4,6);
-		String day = temp.substring(6,8);
-		
-		return (year + month + day);
-	}
-	
 	
 	public static String getAccessToken(OAuth2Details oauthDetails) 
 	{
@@ -506,7 +495,7 @@ public class OAuthUtils {
 		JSONParser parser = new JSONParser();
 		Object obj = null;
 		try {
-			obj = parser.parse(new FileReader("/Users/Administrator/workspace/AuthSdk/0000000004.json"));
+			obj = parser.parse(new FileReader("0000000004.json"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

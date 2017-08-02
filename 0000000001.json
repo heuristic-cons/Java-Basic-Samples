@@ -1,11 +1,11 @@
 {
-  "ProductCode":"15000436574634",
+  "ProductCode":"05000456013482",
   "SerialNumber":"0000000001",
   "BatchId":"00001",
-  "BatchExpiryDate":"2020-12-31T00:00:00",
+  "BatchExpiryDate":"201200",
   "_state.Type":"Sweden.Preview.Domain.Model.Active, Sweden.Preview.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
   "_state":{
-             "BatchExpiryDate":"2020-12-31T00:00:00",
+             "BatchExpiryDate":"201200",
                                          "Location":"",
                                             "Changed":"2017-02-26T10:23:15.0675723Z",
                                          "_name":"Active"
